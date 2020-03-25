@@ -429,6 +429,25 @@
         <property name="action_name">app.new_task</property>
       </object>
     </child>
+    <child>
+      <object class="GtkButton" id="defer_task_button">
+        <property name="visible">True</property>
+        <property name="can_focus">True</property>
+        <property name="receives_default">True</property>
+        <property name="action_name">win.due_tomorrow</property>
+        <child>
+          <object class="GtkImage" id="defer_icon">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="icon_name">appointment-new-symbolic</property>
+            <property name="icon_size">1</property>
+          </object>
+        </child>
+      </object>
+      <packing>
+        <property name="position">3</property>
+      </packing>
+    </child>
     <child type="title">
       <object class="GtkStackSwitcher" id="stack_switcher">
         <property name="visible">True</property>
