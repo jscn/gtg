@@ -82,7 +82,8 @@ class BackendFactory(Borg):
         for filename in os.listdir(this_dir):
             is_python = filename.endswith(".py")
             has_prefix = filename.startswith(self.BACKEND_PREFIX)
-            if is_python and has_prefix:
+            is_signals = "signals" in filename
+            if is_python and has_prefix and not is_signals:
                 yield filename
 
     def get_backend(self, backend_name):
