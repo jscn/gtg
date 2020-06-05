@@ -115,7 +115,10 @@ class BackendsDialog():
         @returns GdkPixbuf: a pixbuf containing the wanted icon, or None
         (if the icon is not present)
         """
-        return Gtk.IconTheme.get_default().load_icon(name, height, 0)
+        try:
+            return Gtk.IconTheme.get_default().load_icon(name, height, 0)
+        except:
+            pass
 
     def _show_panel(self, panel_name):
         """

@@ -78,7 +78,10 @@ class BackendsCombo(Gtk.ComboBox):
             # See LP bug #940917 (Izidor)
             if name == "backend_localfile":
                 continue
-            pixbuf = self.dialog.get_pixbuf_from_icon_name(name, 16)
+            try:
+                pixbuf = self.dialog.get_pixbuf_from_icon_name(name, 16)
+            except:
+                pixbuf = None
             self.liststore.append((name,
                                    module.Backend.get_human_default_name(),
                                    pixbuf))
